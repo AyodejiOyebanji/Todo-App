@@ -1,0 +1,135 @@
+<!-- <section  class="d-flex justify-content-center " > -->
+  <!-- signup starts from here  -->
+<div class="whole" *ngIf="signUp" > 
+  <div class="container">
+    <div class="side_1 rounded-start">
+      <p class="account p-4">Have an account? <span class="sign text-primary " >Sign in</span></p>
+      <h5 class="wel d-flex justify-content-center">Welcome to <span class="Next"> NEXT</span></h5>
+      <p class="lead d-flex justify-content-center">We help you keep track of your next todo</p>
+      
+        <input type="text" class="one form-control " placeholder="Username" [(ngModel)]="userName"> 
+        <input type="text" class="one form-control " placeholder="Email" [(ngModel)]="email">
+        <input type="password" class="one form-control " placeholder="Password" [(ngModel)]="password">
+        <input type="password" class="one form-control " placeholder="Confirm Password" [(ngModel)]="cPassword">
+        <button class=" display-4 log btn text-light " (click)='createAccount()'>Create an account</button>  
+    </div>
+
+    <div class="side_2 rounded-end">
+      <h2 class="Next display-1">NEXT</h2>
+      <p>Never miss anything......</p>
+    </div>
+  </div>
+</div>
+<!-- signup ends from here -->
+
+<!-- log in starts here -->
+<div class="whole"   *ngIf="logInUI" >
+
+  <div class="container">
+    <div class="side_1 rounded-start">
+      <p class="account p-4">Have an account? <span class="sign text-primary ">Sign Up</span></p>
+      <h5 class="wel d-flex justify-content-center">Welcome  back to <span class="Next"> NEXT</span></h5>
+      <p class="lead d-flex justify-content-center">We help you keep track of your next todo</p>
+      
+        
+        <input type="text" class="one form-control " placeholder="Email" [(ngModel)]="emailLog">
+        <input type="password" class="one form-control " placeholder="Password" [(ngModel)]="passwordLog">
+        
+        <button class=" display-4 log btn text-light" (click)="logIn()">Log In</button>  
+    </div>
+
+    <div class="side_2 rounded-end">
+      <h2 class="Next display-1">NEXT</h2>
+      <p>Never miss anything......</p>
+    </div>
+  </div>
+
+  </div>
+<!-- log in ends here
+
+
+<!-- </section> -->
+
+
+
+<div *ngIf="dashBoard" >
+  <div class="all">
+    <div class="message">
+      <h1 class="display-6">What's up <span class="user_font">{{userName}}</span> </h1>
+      
+      <div class="row">
+        <div class="hole shadow w-50 ">
+          <h2 class="d-flex justify-content-center">Today's Task</h2>
+          <hr>
+          <input type="text" class="form-control m-2" placeholder="Category" [(ngModel)]="category"> 
+          <input type="text" name="" class="form-control m-2" id="" placeholder="Add a to-do item" [(ngModel)]="item"> 
+          <input type="time" name="" id="" class="form-control m-2" placeholder="Set alerm" [(ngModel)]="alerm"> 
+          <button class="dis btn btn-primary " (click)='addTodo()'>Add Todo</button>
+          <!-- <button class="disp btn btn-primary ">My Todo</button> -->
+
+          <hr>
+          
+        </div>
+        <br><br>
+
+
+        <table border="2" class="table table-striped ">
+          <tr>
+            <th style="transform: translateX(30px);">S/N</th>
+            <th>Category</th>
+            <th>To-do item</th>
+            <th>Alerm</th>
+            <th style="transform: translateX(30px);">Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr *ngFor="let dos of allMyTOdo; let i =index" >
+            <td style="transform: translateX(30px);">{{i+1}}</td>
+            <td   class="text-light">{{dos.highlight}}</td>
+            <td class="text-light">{{dos.whaty}}</td>
+            <td class="text-light">{{dos.notify}}</td>
+            <td><!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)='edit(i)'>
+                Edit
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <input type="text" class="form-control m-2" placeholder="Category"  [(ngModel)]="editCategory"> 
+                      <input type="text" name="" class="form-control m-2" id="" placeholder="Add a to-do item" value=""  [(ngModel)]="editItem"> 
+                      <input type="time" name="" id="" class="form-control m-2" placeholder="Set alerm" value="" [(ngModel)]="editAlerm"> 
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)='saveTodo()'>Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div></td>
+            <td><button class="btn btn-danger" (click)="deleteTodo(i)">Delete</button></td>
+            <td></td>
+        
+          </tr>
+        
+        </table>
+        
+        
+
+      </div>
+      
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
