@@ -1,0 +1,117 @@
+<!-- <h3>Hello world</h3>
+<p>my name is Ayo</p>
+<p>{{2*2}}</p>
+<h2>My name is {{name}}</h2>
+<p>I am   {{age}} years old</p>
+<p *ngIf="name=='Kayode'">Hello Kayode</p>
+<button (click)='changeName()'>Change name to Ayodeji</button>
+ <p>{{you}}</p>
+ <!-- <p *ngIf="you =='4'">Big</p> -->
+<!-- <p *ngIf="you <=4">small</p>
+<p *ngIf="you >4">Big</p>
+
+ <button (click)= "changeNumber()">Change Number</button> -->
+  
+ <div class="row d-flex justify-content-center m-5"> 
+ <div class="col-md-4 shadow  ">
+    <h3 class="d-flex justify-content-center display-6">List of Students</h3>
+    <div>
+    <input type="text" class="form-control m-1" placeholder="First Name" [(ngModel)]="name" >
+    <input type="text" class="form-control m-1" placeholder="Last Name" [(ngModel)]="lName">
+    <input type="text" class="form-control m-1" placeholder="Department" [(ngModel)]="department">
+     <input type="text" class="form-control m-1" placeholder="id" [(ngModel)]="myIdentif">
+     <input type="text" class="form-control m-1" placeholder="School" [(ngModel)]="sch">  
+    <button (click)= "addStudents()" class="btn btn-danger m-3 " *ngIf="editMode==false">Add Students</button>
+    <!-- or -->
+   <button class="btn btn-success m-3 " *ngIf="editMode==true" (click)="saveChange()">Save changes</button>
+
+ </div>    
+ </div> 
+</div>
+
+<hr>
+
+<h4 class="d-flex justify-content-center text-success">List of students</h4>
+<table border="4" class="table table-striped ">
+    <tr>
+        <th>S/n</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Department</th>
+        <th>Id</th>
+        <th>School</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    <tr *ngFor="let student of allStudents; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{student.fName}}</td>
+        <td>{{student.lName}}</td>
+        <td>{{student.dept}}</td>
+        <td>{{student.recog}}</td>
+        <td>{{student.school}}</td>
+        <td><button class="btn btn-danger" (click)="deleteStudent(i)">Delete</button></td>
+        <td><button (click)="edit(i)">Edit</button></td>
+        <!-- <td> 
+            Button trigger modal
+ <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)='editMe(student,i)'>
+    Edit
+  </button>
+
+  Modal
+   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Edit list of students</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="" id="" class="form-control" value="{{loadsOfStudents.fName}}"  placeholder="First Name">
+          <input type="text" name="" id="" class="form-control" value="{{loadsOfStudents.lName}}" placeholder="Last Name">
+          <input type="text" name="" id="" class="form-control" value="{{loadsOfStudents.dept}}"placeholder="Department">
+          <input type="text" name="" id="" class="form-control" value="{{loadsOfStudents.recog}} "placeholder="id">
+          <input type="text" name="" id="" class="form-control" value="{{loadsOfStudents.school}} "placeholder="School">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+        </td> -->
+        
+    </tr>
+
+</table>
+    
+
+<!-- <input type="text" [disabled]="disabledValue" name="" id="">
+<img [src]="imageLink" alt="">
+<a [href]="link">link</a>
+<h3 [style.color]="colorForBoy" >Hello Nigga</h3>
+<h4 [class]="colorForBoy" >I am a boy</h4>
+<h4 [ngClass]="gender=='male'?colorForBoy:colorForGirl">Coat of many colours</h4>
+<input type="text" name="" #myInput>
+
+
+<div *ngIf="gender=='male';then maleGuy else theOtherGender"> 
+</div>
+<ng-template  #maleGuy>
+  <p>Na man you be</p>
+  
+</ng-template>
+<ng-template  #theOtherGender>
+  <p>Na woman you be</p>
+  
+</ng-template>
+
+ <div [ngSwitch]="gender">
+  <div *ngSwitchCase="'male'">output</div>
+  <div *ngSwitchCase ="'female'">bebe how far</div>
+  <div *ngSwitchDefault >Wetin be this</div>
+</div> -->
+
+
+ 

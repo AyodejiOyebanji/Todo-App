@@ -1,0 +1,92 @@
+.whole{
+    height: 90vh;
+    width: 90%;
+    background-color:#ECEFF7;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.container{
+    height: 70vh;
+    width: 80%;
+    display: flex;
+    flex-flow: row;
+    
+}
+.side_1{
+    height: 80vh;
+    width: 50%;
+    background-color: white;
+    margin-top: 25px;
+}
+.side_2{
+    height: 80vh;
+    width: 50%;
+    margin-top: 25px;
+
+    text-align: center;
+    padding-top: 100px;
+    color: white;
+    overflow: hidden;
+    background: #C04848;  /* fallback for old browsers */
+    background: linear-gradient(rgb(72,0,72,0.8), rgb(238,84,92)), url("../assets/images/spiral-removebg-preview.png");  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(rgba(133, 101, 133, 0.8), rgb(238,84,92)), url("../assets/images/spiral-removebg-preview.png"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.account{
+    font-size: 10px;
+}
+.lead{
+    font-size: 13px;
+}
+.one{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin-left: 90px;
+    margin-bottom: 10px;
+    
+}
+.log{
+    margin-left: 89px;
+    font-size: 10px;
+    background-color: #232AEA;
+    width: 60%;
+    
+}
+.Next{
+    font-family: 'Dancing Script', cursive;
+
+
+}
+
+
+.all{
+     height: 100vh;
+    width: 100%; 
+    color: white;
+    overflow: hidden;
+    background: #C04848;  /* fallback for old browsers */
+    
+    background: linear-gradient(rgba(133, 101, 133, 0.8), rgb(238,84,92)), url("../assets/images/spiral-removebg-preview.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hole{
+    margin-left: 300px;
+}
+.dis{
+    margin-left: 150px;
+    border: none;
+    outline: none;
+    width: 120px;
+}
+/* .disp{
+    margin-left: 20px;
+    width: 120px;
+} */
+.user_font{
+    font-family: 'Dancing Script', cursive;
+
+}
